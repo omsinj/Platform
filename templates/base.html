@@ -1,24 +1,37 @@
-<<!-- base.html -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia Platform</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    {% block custom_styles %}
+    {% endblock %}
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="container">
-                <a class="navbar-brand" href="{% url 'home' %}">Trivia Platform</a>
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'games_menu' %}"><i class="fas fa-gamepad"></i> Games</a></li>
-                    <!-- Add more navigation items as needed -->
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="{% url 'home' %}">Trivia Platform</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'resources' %}"><i class="fas fa-book"></i> Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'games' %}"><i class="fas fa-gamepad"></i> Games</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -26,17 +39,32 @@
 
     <div class="container">
         {% block content %}
-        <!-- Child templates will extend this block with their content -->
         {% endblock %}
+
+        <div class="handshake-image">
+            {% block handshake_image %}
+            <img src="{% static 'images/home_handshake.jpg' %}" alt="Handshake">
+            {% endblock %}
+        </div>
+
+        <div class="resources-content">
+            {% block resources %}
+            {% endblock %}
+        </div>
     </div>
 
     <footer>
-        <div class="container">
-            <!-- Footer content -->
+        <div class="footer-content">
+            <p>&copy; 2024 Trivia Platform. All rights reserved.</p>
+            <p>Innovation Week supported by <span class="bold">BOLD Glasgow</span></p>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    {% block custom_scripts %}
+    {% endblock %}
 </body>
-</html>
-
-
 </html>
