@@ -1,0 +1,15 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to the Trivia Platform</h1>
+        <p>Challenge yourself with exciting trivia games!</p>
+        <div class="cta-buttons">
+            <a href="{% url 'games' %}" class="btn btn-primary">Play Games</a>
+            <a href="{% url 'resources' %}" class="btn btn-secondary">Explore Resources</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

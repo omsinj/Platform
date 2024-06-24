@@ -1,0 +1,12 @@
+<!-- templates/games_menu.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Games Menu</h2>
+    <div class="menu">
+        <a href="{% url 'system_generated' %}" class="btn">System Generated</a>
+        <a href="{% url 'user_generated' %}" class="btn">User Generated</a>
+    </div>
+</div>
+{% endblock %}

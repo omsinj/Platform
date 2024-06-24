@@ -1,0 +1,33 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Platform</title>
+    {% load static %} <!-- Load the static tag -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{% url 'games:games' %}"><i class="fas fa-gamepad"></i> Games</a></li>
+                <!-- Add more navigation items as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Your main content goes here -->
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+</body>
+
+</html>

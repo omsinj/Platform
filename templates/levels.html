@@ -1,0 +1,13 @@
+<!-- templates/levels.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Select a Level</h2>
+    <div class="levels">
+        {% for level in levels %}
+        <a href="{% url 'play_level' category_id=category.id level_id=level.id %}" class="btn">{{ level.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

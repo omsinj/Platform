@@ -1,0 +1,13 @@
+<!-- templates/rewards.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Rewards</h2>
+    <ul>
+        {% for reward in rewards %}
+        <li>{{ reward.user.username }} - {{ reward.points }} points - {{ reward.badge }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

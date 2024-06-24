@@ -1,0 +1,19 @@
+<!-- templates/play_level.html -->
+{% extends 'base.html' %}
+
+<!-- templates/play_level.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>{{ category.name }} - {{ level.name }}</h2>
+    <div class="questions">
+        {% for question in questions %}
+        <div class="question">
+            <p>{{ question.text }}</p>
+            <!-- Add form or buttons for answering the question -->
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
